@@ -14,15 +14,15 @@ class Post extends Model
     }
 
 
-    public function comment()
+    public function aLotOfComment()
     {
-        return $this->hasMany(Comment::class);
+        return $this->belongsToMany(Comment::class, 'category_post', 'id', 'category');
     }
 
 
-    public function user()
+    public function userData()
     {
-        return $this->hasMany(User::class);
+        return $this->belongsTo(User::class, 'user', 'id');
     }
 
 

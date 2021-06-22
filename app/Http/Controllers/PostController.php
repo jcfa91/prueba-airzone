@@ -21,8 +21,8 @@ class PostController extends Controller
                   'id' => $post->id,
                   'title' => $post->title,
                   'short_conteng' => null,
-                  'users' => array(User::find($post->user)->toArray()),
-                  'comments' => array(Comment::find($post->comment)->toArray())
+                  'users' => array($post->userData->toArray()),
+                  'comments' => array($post->aLotOfComment->toArray()[0])
               )
             );
             $status = 200;

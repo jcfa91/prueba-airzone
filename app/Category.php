@@ -10,11 +10,11 @@ class Category extends Model
     //
     public $timestamps = false;
 
-    public function post()
-    {
-        return $this->hasMany(Post::class);
-    }
 
+    public function aLotOfPost()
+    {
+        return $this->belongsToMany(Post::class, 'category_post', 'id', 'blog');
+    }
 
 
 }
